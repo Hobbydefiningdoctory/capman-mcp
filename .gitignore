@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Generated exports and release artifacts
+exports/
+*.zip
+.zipFile.zip
+
+# Build output (Phase 2 web dashboard will generate this)
+dist/
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Environment
+.env
+.env.local
+
+# Replit — environment, agent internals, and runtime cache
+.replit
+replit.nix
+.upm/
+.cache/
+.local/
+.agents/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/

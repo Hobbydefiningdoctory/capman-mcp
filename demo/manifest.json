@@ -1,0 +1,117 @@
+{
+  "schemaVersion": "1.0.0",
+  "version": "1.0.0",
+  "generatedAt": "2026-06-13T00:00:00.000Z",
+  "app": "capman-mcp Demo Store",
+  "description": "Sample e-commerce capability manifest for capman-mcp demo mode",
+  "capabilities": [
+    {
+      "id": "get_product",
+      "name": "Get Product",
+      "description": "Retrieve details for a specific product by ID or SKU",
+      "examples": [
+        "get product 123",
+        "show product details for SKU-456",
+        "what is product ABC"
+      ],
+      "privacy": { "level": "public" },
+      "lifecycle": { "status": "stable" },
+      "params": [
+        {
+          "name": "product_id",
+          "description": "The product ID or SKU",
+          "required": true,
+          "source": "user_query",
+          "type": "string",
+          "example": "SKU-123"
+        }
+      ],
+      "resolver": {
+        "type": "api",
+        "endpoints": [{ "method": "GET", "path": "/products/{product_id}" }]
+      },
+      "returns": ["product"]
+      },
+      {
+      "id": "list_orders",
+      "name": "List Orders",
+      "description": "List recent orders placed by a customer",
+      "examples": [
+        "list orders",
+        "show recent orders",
+        "what orders have been placed"
+      ],
+      "privacy": { "level": "public" },
+      "lifecycle": { "status": "stable" },
+      "params": [
+        {
+          "name": "limit",
+          "description": "Maximum number of orders to return (default 10)",
+          "required": false,
+          "source": "user_query",
+          "type": "number",
+          "example": "10"
+        }
+      ],
+      "resolver": {
+        "type": "api",
+        "endpoints": [{ "method": "GET", "path": "/orders" }]
+      },
+      "returns": ["orders"]
+      },
+      {
+      "id": "get_order",
+      "name": "Get Order",
+      "description": "Retrieve details for a specific order by order ID",
+      "examples": [
+        "get order ORD-123",
+        "show order details for ORD-456",
+        "what is the status of order ORD-789"
+      ],
+      "privacy": { "level": "public" },
+      "lifecycle": { "status": "stable" },
+      "params": [
+        {
+          "name": "order_id",
+          "description": "The order ID (e.g. ORD-123)",
+          "required": true,
+          "source": "user_query",
+          "type": "string",
+          "example": "ORD-123"
+        }
+      ],
+      "resolver": {
+        "type": "api",
+        "endpoints": [{ "method": "GET", "path": "/orders/{order_id}" }]
+      },
+      "returns": ["order"]
+      },
+      {
+      "id": "check_availability",
+      "name": "Check Availability",
+      "description": "Check whether a product is currently in stock",
+      "examples": [
+        "check availability for blue jacket",
+        "is product SKU-999 in stock",
+        "check stock for item 42"
+      ],
+      "privacy": { "level": "public" },
+      "lifecycle": { "status": "stable" },
+      "params": [
+        {
+          "name": "product_id",
+          "description": "The product ID or SKU to check",
+          "required": true,
+          "source": "user_query",
+          "type": "string",
+          "example": "SKU-999"
+        }
+      ],
+"resolver": {
+        "type": "api",
+        "endpoints": [{ "method": "GET", "path": "/products/{product_id}/availability" }]
+      },
+      "returns": ["availability"]
+    }
+  ]
+}

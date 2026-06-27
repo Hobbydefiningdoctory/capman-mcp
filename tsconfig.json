@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "ES2021",
+    "module": "commonjs",
+    "lib": ["ES2021"],
+    "outDir": "./dist/cjs",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "typeRoots": ["./node_modules/@types"],
+    "types": ["node"],
+    "paths": {
+      "@modelcontextprotocol/sdk/server": [
+        "./node_modules/@modelcontextprotocol/sdk/dist/cjs/server/index"
+      ],
+      "@modelcontextprotocol/sdk/server/stdio.js": [
+        "./node_modules/@modelcontextprotocol/sdk/dist/cjs/server/stdio"
+      ],
+      "@modelcontextprotocol/sdk/server/streamableHttp.js": [
+        "./node_modules/@modelcontextprotocol/sdk/dist/cjs/server/streamableHttp"
+      ],
+      "@modelcontextprotocol/sdk/types.js": [
+        "./node_modules/@modelcontextprotocol/sdk/dist/cjs/types"
+      ]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
